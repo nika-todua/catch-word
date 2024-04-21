@@ -16,7 +16,7 @@ var ScoreData = $('.score')
 var timerData = $('.timer')
 var addTimerData = $('.add-timer')
 var stageData = $('.stage')
-var beginTimerElem = $('.modal-cont-begin h1')
+var beginTimerElem = $('.modal-cont-begin h2')
 
 // Audio SRC
 var bgMusic = document.createElement('audio');
@@ -24,7 +24,7 @@ bgMusic.setAttribute('src', 'sounds/bgmusic.mp3');
 bgMusic.setAttribute('autoplay', 'autoplay');
 $.get();
 bgMusic.addEventListener("load", function () {
-    bgMusic.play();
+    bgMusic.pause();
 }, true);
 bgMusic.playbackRate = soundInterval
 
@@ -114,9 +114,9 @@ function beginFun() {
         document.querySelector('input').focus()
         return beginTimerElem.html(beginCounter)
     }
-    document.querySelector('input').value = null
     beginCounter--
     beginTimerElem.html(beginCounter)
+    document.querySelector('input').value = null
 }
 
 // Set all data and functions in mounted mode
@@ -141,7 +141,7 @@ function shuffle(array) {
 
 function setRandomWord() {
     var Words = []
-    $.getJSON("https://random-word-api.herokuapp.com/word?number=2800", function (data) {
+    $.getJSON("https://random-word-api.herokuapp.com/word?number=2", function (data) {
         Words = data
         randomWord = Words[Math.floor(Math.random() * Words.length)]
         shuffle(Words)
@@ -158,8 +158,10 @@ function timerSetting() {
     }
     if (Timer < 10) {
         timerData.addClass('red')
+    } else{
+        timerData.removeClass('red')
     }
-    if (Timer <= 0) {
+    if (Timer === 0) {
         gameOver()
     } else {
         Timer--
