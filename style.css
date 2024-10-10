@@ -6,12 +6,38 @@
     border: none;
     user-select: none;
 }
+.hidden{
+    display: none !important;;
+}
+.show{
+    display: block;
+}
 body {
     min-height: 100vh;
     transition: 1s;
 }
 .font {
     font-family: 'Odibee Sans', cursive;
+}
+.play_box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.play_box button{
+    width: 120px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #379FFF;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
 }
 .top-content {
     position: relative;
@@ -35,7 +61,7 @@ body {
 }
 .word {
     font-size: 36px;
-    margin-top: 25px;
+    margin-top: 35px;
     text-align: center;
     pointer-events: none;
 }
@@ -45,7 +71,7 @@ input {
     background-color: transparent;
     text-align: center;
     width: 90%;
-    margin-top: 65px;
+    margin-top: 80px;
 }
 .timer {
     font-size: 36px;

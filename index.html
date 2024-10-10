@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <title>Catch word</title>
 </head>
 <body oncopy="return false" oncut="return false" onpaste="return false">
+    <div class="play_box">
+        <button class="font" onclick="playbtnevent()">play</button>
+    </div>
     <div class="modal-cont">
         <div class="modal-box">
             <h1 class="font">Time Out</h1>
@@ -18,7 +21,7 @@
             <button onclick="Repeat()" class="font">OK</button>
         </div>
     </div>
-    <div class="modal-cont-begin">
+    <div class="modal-cont-begin hidden">
         <h2 class="font">3</h2>
     </div>
     <div class="top-content container">

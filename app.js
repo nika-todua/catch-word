@@ -24,6 +24,7 @@ bgMusic.setAttribute('src', 'sounds/bgmusic.mp3');
 bgMusic.setAttribute('autoplay', 'autoplay');
 $.get();
 bgMusic.addEventListener("load", function () {
+    bgMusic.load();
     bgMusic.pause();
 }, true);
 bgMusic.playbackRate = soundInterval
@@ -32,6 +33,7 @@ var loseSound = document.createElement('audio');
 loseSound.setAttribute('src', 'sounds/lose.mp3');
 $.get();
 loseSound.addEventListener("load", function () {
+    loseSound.load();
     loseSound.pause();
     alert()
 }, true);
@@ -40,6 +42,7 @@ var scoreSound = document.createElement('audio');
 scoreSound.setAttribute('src', 'sounds/score.mp3');
 $.get();
 scoreSound.addEventListener("load", function () {
+    scoreSound.load();
     scoreSound.pause();
 }, true);
 
@@ -47,12 +50,25 @@ var counterSound = document.createElement('audio');
 counterSound.setAttribute('src', 'sounds/count.mp3');
 $.get();
 counterSound.addEventListener("load", function () {
+    counterSound.load();
     counterSound.pause();
 }, true);
 
+counterSound.pause();
+bgMusic.pause();
+loseSound.pause();
+scoreSound.pause();
 
-// Function expression
-beginTimer()
+function playbtnevent(){
+    document.querySelector(".modal-cont-begin").classList.add("show")
+    document.querySelector(".modal-cont-begin").classList.remove("hidden")
+
+    document.querySelector(".play_box").classList.add("hidden")
+    document.querySelector(".play_box").classList.remove("show")
+    
+    // Function expression
+    beginTimer()
+}
 
 // Event when you catch word correct
 document.querySelector('input').addEventListener('keyup', function () {
