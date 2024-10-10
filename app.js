@@ -157,7 +157,7 @@ function shuffle(array) {
 
 function setRandomWord() {
     var Words = []
-    $.getJSON("https://random-word-api.herokuapp.com/word?number=2", function (data) {
+    $.getJSON("words.json", function (data) {
         Words = data
         randomWord = Words[Math.floor(Math.random() * Words.length)]
         shuffle(Words)
